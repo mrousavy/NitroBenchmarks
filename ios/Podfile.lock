@@ -66,6 +66,27 @@ PODS:
     - ReactCommon/turbomodule/bridging
     - ReactCommon/turbomodule/core
     - Yoga
+  - MyTurboModule (0.0.1):
+    - DoubleConversion
+    - glog
+    - hermes-engine
+    - RCT-Folly (= 2024.01.01.00)
+    - RCTRequired
+    - RCTTypeSafety
+    - React-Codegen
+    - React-Core
+    - React-debug
+    - React-Fabric
+    - React-featureflags
+    - React-graphics
+    - React-ImageManager
+    - React-NativeModulesApple
+    - React-RCTFabric
+    - React-rendererdebug
+    - React-utils
+    - ReactCommon/turbomodule/bridging
+    - ReactCommon/turbomodule/core
+    - Yoga
   - NitroModules (0.3.0):
     - DoubleConversion
     - glog
@@ -1263,6 +1284,7 @@ DEPENDENCIES:
   - hermes-engine (from `../node_modules/react-native/sdks/hermes-engine/hermes-engine.podspec`)
   - MyModule (from `../modules/my-module/ios`)
   - MyNitroModule (from `../modules/nitro-module`)
+  - MyTurboModule (from `../node_modules/my-turbo-module`)
   - NitroModules (from `../node_modules/react-native-nitro-modules`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCT-Folly/Fabric (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
@@ -1351,6 +1373,8 @@ EXTERNAL SOURCES:
     :path: "../modules/my-module/ios"
   MyNitroModule:
     :path: "../modules/nitro-module"
+  MyTurboModule:
+    :path: "../node_modules/my-turbo-module"
   NitroModules:
     :path: "../node_modules/react-native-nitro-modules"
   RCT-Folly:
@@ -1466,6 +1490,7 @@ SPEC CHECKSUMS:
   hermes-engine: 8c1577f3fdb849cbe7729c2e7b5abc4b845e88f8
   MyModule: 85e6c56cc185059c3faa32d8987bcee7cbc89ead
   MyNitroModule: a30c5fd61d611a62a38ac7c36421c738e99d6755
+  MyTurboModule: 8e204df3c6c0cfb642d1e2dca09c5152a897c7fa
   NitroModules: cd421091537fbdebf47ba7d785d1fb2b647971f7
   RCT-Folly: 02617c592a293bd6d418e0a88ff4ee1f88329b47
   RCTDeprecation: 3afceddffa65aee666dafd6f0116f1d975db1584

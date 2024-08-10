@@ -1,0 +1,29 @@
+{
+  "name": "my-turbo-module",
+  "version": "0.0.1",
+  "description": "Add numbers with Turbo Native Modules",
+  "react-native": "js/index",
+  "source": "js/index",
+  "files": [],
+  "keywords": ["react-native", "ios", "android"],
+  "repository": "https://github.com/<your_github_handle>/rtn-calculator",
+  "author": "Marc Rousavy <your_email@your_provider.com> (https://github.com/<your_github_handle>)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/<your_github_handle>/rtn-calculator/issues"
+  },
+  "homepage": "https://github.com/<your_github_handle>/rtn-calculator#readme",
+  "devDependencies": {},
+  "peerDependencies": {
+    "react": "*",
+    "react-native": "*"
+  },
+  "codegenConfig": {
+    "name": "MyTurboModule",
+    "type": "modules",
+    "jsSrcsDir": "js",
+    "android": {
+      "javaPackageName": "com.mrousavy"
+    }
+  }
+}
