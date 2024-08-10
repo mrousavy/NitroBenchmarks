@@ -1,0 +1,14 @@
+{
+  "android": {
+    "androidCxxLibName": "MyNitroModule",
+    "androidNamespace": [
+      "mymodule"
+    ]
+  },
+  "cxxNamespace": [
+    "mymodule"
+  ],
+  "ios": {
+    "iosModulename": "MyNitroModule"
+  }
+}

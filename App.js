@@ -1,10 +1,24 @@
 import { StatusBar } from 'expo-status-bar';
 import { StyleSheet, Text, View } from 'react-native';
-import { addNumbers, addStrings } from './modules/my-module';
+import { MyExpoModule } from './modules/my-module';
+import { MyNitroModule } from './modules/nitro-module';
+
+function testExpoModule() {
+  MyExpoModule.addNumbers(5, 13)
+  MyExpoModule.addStrings('hello ', 'world')
+}
+function testNitroModule() {
+  MyNitroModule.addNumbers(5, 13)
+  MyNitroModule.addStrings('hello ', 'world')
+}
+
+
 
 export default function App() {
-  console.log(addNumbers(5, 13))
-  console.log(addStrings('hello', 'world'))
+
+  testExpoModule()
+  testNitroModule()
+
   return (
     <View style={styles.container}>
       <Text>Open up App.js to start working on your app!</Text>
