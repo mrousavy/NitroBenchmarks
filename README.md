@@ -48,8 +48,8 @@ On my iPhone 15 Pro I got these numbers in a release build:
   </tr>
 </table>
 
-- For `addNumbers(...)`, Nitro Modules is **55x as fast as TurboModules**, and **15x as fast as Expo Modules** 🔥
-- For `addStrings(...)`, Nitro Modules is **13x as fast as TurboModules**, and **5x as fast as Expo Modules** 🔥
+- For `addNumbers(...)`, Nitro Modules is **55x as fast as ExpoModules**, and **15x as fast as TurboModules** 🔥
+- For `addStrings(...)`, Nitro Modules is **13x as fast as ExpoModules**, and **5x as fast as TurboModules** 🔥
 
 ---
 
