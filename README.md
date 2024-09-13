@@ -36,19 +36,19 @@ On my iPhone 15 Pro I got these numbers in a release build:
   </tr>
   <tr>
     <td>100.000x <code>addNumbers(...)</code></td>
-    <td>404.95ms</td>
-    <td>108.84ms</td>
-    <td><b>7.25ms</b></td>
+    <td>434.85</td>
+    <td>115.86ms</td>
+    <td><b>7.27ms</b></td>
   </tr>
   <tr>
     <td>100.000x <code>addStrings(...)</code></td>
-    <td>420.69ms</td>
-    <td>169.84ms</td>
-    <td><b>30.71ms</b></td>
+    <td>429.53ms</td>
+    <td>179.02ms</td>
+    <td><b>29.94ms</b></td>
   </tr>
 </table>
 
-- For `addNumbers(...)`, Nitro Modules is **55x as fast as ExpoModules**, and **15x as fast as TurboModules** 🔥
+- For `addNumbers(...)`, Nitro Modules is **59x as fast as ExpoModules**, and **15x as fast as TurboModules** 🔥
 - For `addStrings(...)`, Nitro Modules is **13x as fast as ExpoModules**, and **5x as fast as TurboModules** 🔥
 
 ---
