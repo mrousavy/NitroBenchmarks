@@ -21,6 +21,9 @@ function testTurboModule() {
 const runs = 100_000
 
 function runNumberBenchmark() {
+  testExpoModule()
+  testNitroModule()
+  testTurboModule()
   console.log('--------- BEGINNING NUMBER BENCHMARKS ---------')
   let expoTime = 0
   {
