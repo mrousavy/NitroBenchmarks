@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import { useEffect, useState } from 'react';
 import { StyleSheet, Text, View } from 'react-native';
 import { MyExpoModule } from './modules/my-module';
-import { MyNitroModule } from './modules/nitro-module';
+import { MyNitroModule, MyCxxNitroModule } from './modules/nitro-module';
 import { MyTurboModule } from './modules/turbo-module/js'
 
 function testExpoModule() {
@@ -12,6 +12,10 @@ function testExpoModule() {
 function testNitroModule() {
   MyNitroModule.addNumbers(5, 13)
   MyNitroModule.addStrings('hello ', 'world')
+}
+function testNitroCxxModule() {
+  MyCxxNitroModule.addNumbers(5, 13)
+  MyCxxNitroModule.addStrings('hello ', 'world')
 }
 function testTurboModule() {
   MyTurboModule.addNumbers(5, 13)
@@ -23,6 +27,7 @@ const runs = 100_000
 function runNumberBenchmark() {
   testExpoModule()
   testNitroModule()
+  testNitroCxxModule()
   testTurboModule()
   console.log('--------- BEGINNING NUMBER BENCHMARKS ---------')
   let expoTime = 0
@@ -61,8 +66,20 @@ function runNumberBenchmark() {
     nitroTime = (end - start).toFixed(2)
     console.log(`NitroModule took ${nitroTime}ms to run addNumbers(...) ${runs}x!`)
   }
+  let nitroCxxTime = 0
+  {
+    console.log(`Starting CxxNitroModule benchmark...`)
+    const start = performance.now()
+    let num = 0
+    for (let i = 0; i < runs; i++) {
+      num = MyCxxNitroModule.addNumbers(num, 5)
+    }
+    const end = performance.now()
+    nitroCxxTime = (end - start).toFixed(2)
+    console.log(`CxxNitroModule took ${nitroCxxTime}ms to run addNumbers(...) ${runs}x!`)
+  }
   console.log('--------- FINISHED NUMBER BENCHMARKS! ---------')
-  return { expoTime, turboTime, nitroTime }
+  return { expoTime, turboTime, nitroTime, nitroCxxTime }
 }
 
 function runStringsBenchmark() {
@@ -99,6 +116,17 @@ function runStringsBenchmark() {
     const end = performance.now()
     nitroTime = (end - start).toFixed(2)
     console.log(`NitroModule took ${nitroTime}ms to run addStrings(...) ${runs}x!`)
+  }
+  let nitroCxxTime = 0
+  {
+    console.log(`Starting CxxNitroModule benchmark...`)
+    const start = performance.now()
+    for (let i = 0; i < runs; i++) {
+      const x = MyCxxNitroModule.addStrings('hello ', 'world')
+    }
+    const end = performance.now()
+    nitroCxxTime = (end - start).toFixed(2)
+    console.log(`CxxNitroModule took ${nitroCxxTime}ms to run addStrings(...) ${runs}x!`)
   }
   console.log('--------- FINISHED STRING BENCHMARKS! ---------')
   return { expoTime, turboTime, nitroTime }
@@ -139,6 +167,9 @@ export default function App() {
         <Text>
           NitroModule.addNumbers(...) took <Text style={{ fontWeight: 'bold' }}>{numberTimes?.nitroTime}ms</Text>
         </Text>
+        <Text>
+          CxxNitroModule.addNumbers(...) took <Text style={{ fontWeight: 'bold' }}>{numberTimes?.nitroCxxTime}ms</Text>
+        </Text>
       </View>
 
       <View style={{ height: 50 }} />
@@ -153,6 +184,9 @@ export default function App() {
         </Text>
         <Text>
           NitroModule.addStrings(...) took <Text style={{ fontWeight: 'bold' }}>{stringTimes?.nitroTime}ms</Text>
+        </Text>
+        <Text>
+          CxxNitroModule.addStrings(...) took <Text style={{ fontWeight: 'bold' }}>{stringTimes?.nitroCxxTime}ms</Text>
         </Text>
       </View>
 

@@ -4,3 +4,8 @@ export interface MyModule extends HybridObject<{ ios: 'swift' }> {
   addNumbers(a: number, b: number): number
   addStrings(a: string, b: string): string
 }
+
+export interface MyCxxModule extends HybridObject<{ ios: 'c++' }> {
+  addNumbers(a: number, b: number): number
+  addStrings(a: string, b: string): string
+}

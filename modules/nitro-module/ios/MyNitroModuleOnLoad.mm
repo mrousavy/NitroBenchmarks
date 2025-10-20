@@ -8,6 +8,7 @@
 #import "HybridMyModuleSpecSwift.hpp"
 #import <Foundation/Foundation.h>
 #import <NitroModules/HybridObjectRegistry.hpp>
+#import "HybridMyCxxModule.hpp"
 
 namespace MyNitroModule {
 class MyNitroModuleRegistry;
@@ -26,6 +27,9 @@ using namespace margelo::nitro;
   HybridObjectRegistry::registerHybridObjectConstructor("MyModule", []() -> std::shared_ptr<HybridObject> {
     auto myModule = MyNitroModule::MyNitroModuleRegistry::createMyModule();
     return std::make_shared<mymodule::HybridMyModuleSpecSwift>(myModule);
+  });
+  HybridObjectRegistry::registerHybridObjectConstructor("MyCxxModule", []() -> std::shared_ptr<HybridObject> {
+    return std::make_shared<mymodule::HybridMyCxxModule>();
   });
 }
 
