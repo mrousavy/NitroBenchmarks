@@ -129,7 +129,7 @@ function runStringsBenchmark() {
     console.log(`CxxNitroModule took ${nitroCxxTime}ms to run addStrings(...) ${runs}x!`)
   }
   console.log('--------- FINISHED STRING BENCHMARKS! ---------')
-  return { expoTime, turboTime, nitroTime }
+  return { expoTime, turboTime, nitroTime, nitroCxxTime }
 }
 
 
