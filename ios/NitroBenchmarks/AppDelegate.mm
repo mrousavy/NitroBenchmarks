@@ -2,6 +2,8 @@
 
 #import <React/RCTBundleURLProvider.h>
 #import <React/RCTLinkingManager.h>
+#import <ReactCommon/RCTTurboModuleManager.h>
+#import <MyCxxTurboModule/NativeMyCxxTurboModule.h>
 
 @implementation AppDelegate
 
@@ -57,6 +59,17 @@
 - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(void (^)(UIBackgroundFetchResult))completionHandler
 {
   return [super application:application didReceiveRemoteNotification:userInfo fetchCompletionHandler:completionHandler];
+}
+
+#pragma mark - RCTTurboModuleManagerDelegate
+
+- (std::shared_ptr<facebook::react::TurboModule>)getTurboModule:(const std::string &)name
+                                                      jsInvoker:(std::shared_ptr<facebook::react::CallInvoker>)jsInvoker
+{
+  if (name == "MyCxxTurboModule") {
+    return std::make_shared<facebook::react::NativeMyCxxTurboModule>(jsInvoker);
+  }
+  return nullptr;
 }
 
 @end

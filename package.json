@@ -14,6 +14,7 @@
     "expo-build-properties": "~0.12.5",
     "expo-status-bar": "~1.12.1",
     "my-turbo-module": "file:modules/turbo-module",
+    "my-turbo-module-cpp": "file:modules/turbo-module-cpp",
     "react": "18.2.0",
     "react-native": "0.74.5",
     "react-native-nitro-modules": "^0.3.0",
