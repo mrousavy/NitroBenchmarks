@@ -101,6 +101,29 @@ C++ is a lot faster than platform-specific languages like Swift or Kotlin:
   </tr>
 </table>
 
+## C++ TurboModule vs C++ NitroModule
+
+When using C++ only, Nitro still has a more direct binding to native.
+On an iPhone Air, these are the results:
+
+<table>
+  <tr>
+    <th></th>
+    <th>TurboModules C++</th>
+    <th>NitroModules C++</th>
+  </tr>
+  <tr>
+    <td>100.000x <code>addNumbers(...)</code></td>
+    <td>13.97ms</td>
+    <td><b>4.32ms</b></td>
+  </tr>
+  <tr>
+    <td>100.000x <code>addStrings(...)</code></td>
+    <td>17.47ms</td>
+    <td><b>8.93ms</b></td>
+  </tr>
+</table>
+
 ## Real-world
 
 Note that these are just very specific benchmarks. They profile JS <-> Native function execution time (call, argument parsing, and result argument conversion).
